@@ -1,9 +1,17 @@
 from utils.players import BasePokerPlayer
 from utils.card_utils import gen_cards, estimate_hole_card_win_rate
 
+
+
+
+
+
 NB_SIMULATION = 1000
 
 class HonestPlayer(BasePokerPlayer):
+
+
+
 
     def declare_action(self, valid_actions, hole_card, round_state):
         community_card = round_state['community_card']
@@ -31,5 +39,8 @@ class HonestPlayer(BasePokerPlayer):
     def receive_game_update_message(self, action, round_state):
         pass
 
+
+
     def receive_round_result_message(self, winners, hand_info, round_state):
         pass
+

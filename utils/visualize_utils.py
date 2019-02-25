@@ -1,8 +1,12 @@
+from utils import card_utils
+from utils.card_utils import estimate_hole_card_win_rate as win_count
+
 DIVIDER = "="*70
 
 def visualize_game_start(game_info, uuid=None):
     ls = []
-    ls.append(_visualize_title("Game start", uuid))
+    #uuid
+    ls.append(_visualize_sub_title("Game start"))
     ls.append(DIVIDER)
     ls.append(_visualize_sub_title("rule"))
     ls.append(_visualize_item("%d players game" % game_info["player_num"]))
@@ -42,6 +46,14 @@ def visualize_street_start(street, _round_state, uuid=None):
     ls.append(DIVIDER)
     return "\n".join(ls)
 
+
+def visualize_win_rate(win_count, uuid=None):
+    ls =[]
+    ls.append(_visualize_item(win_count))
+
+
+
+
 def visualize_declare_action(valid_actions, hole_card, round_state, uuid=None):
     ls = []
     ls.append(_visualize_title("Declare your action", uuid))
@@ -55,6 +67,15 @@ def visualize_declare_action(valid_actions, hole_card, round_state, uuid=None):
     ))
     ls.append(_visualize_sub_title("hole card"))
     ls.append(_visualize_item(str(hole_card)))
+    ###############
+
+    ls.append(_visualize_sub_title("win rate: "))
+    ls.append(_visualize_item(win_count))
+    #ls.append(_visualize_item(estimate_hole_card_win_rate(nb_player=2,nb_simulation=1000, hole_card=hole_card)))
+
+
+
+    #############
     ls.append(_visualize_sub_title("round state"))
     ls.append(visualize_round_state(round_state))
     ls.append(DIVIDER)
@@ -174,4 +195,3 @@ def _visualize_sub_item(subitem):
 
 def _visualize_sub_sub_item(subsubitem):
     return "      - %s" % subsubitem
-

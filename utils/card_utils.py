@@ -1,5 +1,4 @@
 import random
-
 from builder.card import Card
 from builder.deck import Deck
 from builder.hand_evaluator import HandEvaluator
@@ -43,8 +42,10 @@ def _fill_community_card(base_cards, used_card):
     return base_cards + _pick_unused_card(need_num, used_card)
 
 def _pick_unused_card(card_num, used_card):
-    used = [card.to_id() for card in used_card]
+    used = [card.to_id()for card in used_card]
     unused = [card_id for card_id in range(1, 53) if card_id not in used]
     choiced = random.sample(unused, card_num)
     return [Card.from_id(card_id) for card_id in choiced]
+
+
 

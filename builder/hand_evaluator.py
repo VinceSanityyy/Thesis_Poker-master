@@ -66,6 +66,7 @@ class HandEvaluator:
   #       FullHouse of rank 3, 4   =>   100000 0011 0100
   #       FourCard of rank 2       =>  1000000 0010 0000
   #       straight flash of rank 7 => 10000000 0111 0000
+
   @classmethod
   def __calc_hand_info_flg(self, hole, community):
     cards = hole + community

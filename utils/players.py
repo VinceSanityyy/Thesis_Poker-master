@@ -1,8 +1,11 @@
 class BasePokerPlayer(object):
   """Base Poker client implementation
 
-  To create poker client, you need to override this class and
+
+   poker client, you need to override this class and
   implement following 7 methods.
+
+  poker player client. kelangan e override ug i implement ang ff methods
 
   - declare_action
   - receive_game_start_message

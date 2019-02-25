@@ -44,7 +44,8 @@ class Config(object):
     def validation(self):
         player_num = len(self.players_info)
         if player_num < 2:
-            detail_msg = "no player is registered yet" if player_num==0 else "you registered only 1 player"
+            detail_msg = "no player is registered yet"\
+                if player_num==0 else "you registered only 1 player"
             base_msg = "At least 2 players are needed to start the game"
             raise Exception("%s (but %s.)" % (base_msg, detail_msg))
 
